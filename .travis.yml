@@ -1,0 +1,13 @@
+language: generic
+os: osx
+osx_image: xcode7.3
+before_install:
+  - tty || true
+  - brew install wget openssl
+  - wget https://dotnetcli.blob.core.windows.net/dotnet/beta/Installers/Latest/dotnet-dev-osx-x64.latest.pkg
+  - sudo installer -pkg dotnet-dev-osx-x64.latest.pkg -target /
+script:
+  - ulimit -n 4096
+  - /usr/local/share/dotnet/dotnet restore -v Warning
+  - /usr/local/share/dotnet/dotnet build
+  - ./bin/Debug/netcoreapp1.0/osx.10.11-x64/test
