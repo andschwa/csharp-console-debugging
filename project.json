@@ -2,14 +2,20 @@
   "name": "test",
   "version": "1.0.0-*",
   "compilationOptions": {
-    "emitEntryPoint": true
   },
   "dependencies": {
     "Microsoft.NETCore.App": "1.0.0-rc2-3002668"
   },
   "frameworks": {
-    "netcoreapp1.0": {}
+    "netcoreapp1.0": {
+      "imports": [ "dnxcore50", "portable-net45+win8" ],
+      "dependencies": {
+        "xunit": "2.1.0",
+        "dotnet-test-xunit": "1.0.0-rc2-173384-19"
+      }
+    }
   },
+  "testRunner": "xunit",
   "runtimes": {
     "ubuntu.14.04-x64": { },
     "centos.7.1-x64": { },
