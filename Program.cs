@@ -11,16 +11,8 @@ namespace ConsoleApplication
         {
             String[] lines =
                 {
-                    $"BufferHeight: {Console.BufferHeight}",
-                    $"BufferWidth: {Console.BufferWidth}",
-                    $"WindowHeight: {Console.WindowHeight}",
-                    $"WindowWidth: {Console.WindowWidth}",
-                    $"LargestWindowHeight: {Console.LargestWindowHeight}",
-                    $"LargestWindowWidth: {Console.LargestWindowWidth}",
-                    $"IsErrorRedirected: {Console.IsErrorRedirected}",
-                    $"IsOutputRedirected: {Console.IsOutputRedirected}",
-                    $"IsInputRedirected: {Console.IsInputRedirected}",
-                    ""
+                    "Normal ASCII text",
+                    "你好"
                 };
 
             using (var stream = File.CreateText("Default.log"))
