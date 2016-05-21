@@ -1,14 +1,19 @@
 using System;
+using System.Runtime.InteropServices;
 using Xunit;
 
 namespace TestNamespace
 {
     public class TestClass
     {
+        [DllImport("libtest.so")]
+        public static extern void Abort();
+
         [Fact]
-        public void ThisWillFail()
+        public void ThisWillAbort()
         {
-            Assert.True(false);
+            Abort();
+            Assert.True(true);
         }
     }
 }
